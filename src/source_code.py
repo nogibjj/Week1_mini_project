@@ -14,7 +14,3 @@ def main():
     test1 = 1
     test2 = 2
     return add(test1, test2)
-
-
-if __name__ == "__main__":
-    main()
