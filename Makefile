@@ -1,16 +1,38 @@
-install:
-	pip install -r requirements.txt
+# Makefile for Python Project
 
-test:
-	python -m unittest
+# Variables
+PYTHON := python3
+VENV := venv
+SRC_DIR := src
+TEST_DIR := tests
+REQUIREMENTS := requirements.txt
 
-format:
- 	black *.py
+# Phony targets
+.PHONY: all venv install test format lint clean
 
-lint:
- 	pylint --disable=R,C,W1203,E1101 mlib cli utilscli
- 	lint Dockerfile
- 	docker run --rm -i hadolint/hadolint < Dockerfile
-	
-all:
-	install lint test format
+# Default target
+all: venv install test format lint
+
+# Create a virtual environment
+venv:
+	$(PYTHON) -m venv $(VENV)
+
+# Install project dependencies
+install: venv
+	$(VENV)/bin/pip install -r $(REQUIREMENTS)
+
+# Run unit tests
+test: install
+	$(VENV)/bin/pytest $(TEST_DIR)
+
+# Format code with Black
+format: install
+	$(VENV)/bin/black $(SRC_DIR)
+
+# Lint code with Flake8
+lint: install
+	$(VENV)/bin/flake8 $(SRC_DIR)
+
+# Clean up generated files and virtual environment
+clean:
+	rm -rf $(VENV) __pycache__ .pytest_cache
