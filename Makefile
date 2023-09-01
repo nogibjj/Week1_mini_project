@@ -31,7 +31,7 @@ format: install
 
 # Lint code with Flake8
 lint: install
-	$(VENV)/bin/flake8 $(SRC_DIR)
+	$(VENV)/bin/pylint $(SRC_DIR)
 
 # Clean up generated files and virtual environment
 clean:
