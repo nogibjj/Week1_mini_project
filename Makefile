@@ -12,4 +12,5 @@ lint:
  	lint Dockerfile
  	docker run --rm -i hadolint/hadolint < Dockerfile
 	
-all: install lint test format
+all:
+	install lint test format
