@@ -1,17 +1,18 @@
 """Import appropriate modules to select src filepath"""
-import sys
-import os
+import unittest
 
-current_script_dir = os.path.dirname(__file__)
+from src import source_code  # Import the module you want to test
 
-src_dir = os.path.join(current_script_dir, "..", "src")
 
-sys.path.append(src_dir)
+class TestSourceCode(unittest.TestCase):
+    """unit test class which will test source code"""
 
-from source_code import add
+    def test_add(self):
+        """Test the add function"""
+        result = source_code.add(1, 1)
+        expected_result = 2
+        self.assertEqual(result, expected_result)
 
-def test_func():
-    result = source_code.add(1, 2)
-    expected_result = 3
 
-    assert result == expected_result
+if __name__ == "__main__":
+    unittest.main()
