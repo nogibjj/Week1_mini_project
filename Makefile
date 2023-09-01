@@ -4,8 +4,8 @@ install:
 
  test:
 	python -m unittest
-# format:
-# 	#black *.py
+format:
+ 	black *.py
 
 lint:
  	pylint --disable=R,C,W1203,E1101 mlib cli utilscli
@@ -14,4 +14,4 @@ lint:
 
 
 	
-# all: install lint test format
+all: install lint test format
