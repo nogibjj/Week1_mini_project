@@ -1,7 +1,14 @@
 """Import appropriate modules to select src filepath"""
-
 import unittest
-from pythonproject.src import source_code  # Import the module you want to test
+import sys
+import os
+
+
+current_dir = os.path.dirname(os.path.abspath(__file__))
+parent_dir = os.path.abspath(os.path.join(current_dir, ".."))
+sys.path.insert(0, parent_dir)
+
+from src import source_code
 
 
 class TestSourceCode(unittest.TestCase):
