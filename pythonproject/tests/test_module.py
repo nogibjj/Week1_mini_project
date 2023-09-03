@@ -1,4 +1,4 @@
-"""Import appropriate modules to select src filepath"""
+"""Import appropriate modules to select src filepath since it isnt in the test director"""
 import unittest
 import sys
 import os
