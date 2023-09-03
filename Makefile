@@ -1,4 +1,4 @@
-# Makefile for Python Project
+# Makefile for Python Project requested a basic, readable makefile from chatGPT to understand how these funciton
 
 # Variables
 PYTHON := python3
