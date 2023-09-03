@@ -3,8 +3,8 @@
 # Variables
 PYTHON := python3
 VENV := venv
-SRC_DIR := src
-TEST_DIR := tests
+SRC_DIR := pythonproject/src
+TEST_DIR := pythonproject/tests
 REQUIREMENTS := requirements.txt
 
 # Phony targets

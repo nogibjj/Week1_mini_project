@@ -1,7 +1,7 @@
 """Import appropriate modules to select src filepath"""
 
 import unittest
-import project_template.src.source_code as source_code  # Import the module you want to test
+from pythonproject.src import source_code  # Import the module you want to test
 
 
 class TestSourceCode(unittest.TestCase):
